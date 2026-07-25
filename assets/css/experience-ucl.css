@@ -1,0 +1,87 @@
+.ucl-role-card {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--line, #c9cbc6);
+    border-bottom: 1px solid var(--line, #c9cbc6);
+    display: grid;
+    grid-template-columns: minmax(100px, 0.28fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    background: transparent;
+}
+
+.ucl-role-logo {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    border-right: 1px solid var(--line, #c9cbc6);
+}
+
+.ucl-role-logo img {
+    width: min(100%, 118px);
+    height: auto;
+    max-height: 52px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.ucl-role-meta {
+    margin: 0 0 0.35rem;
+    color: var(--teal-dark, #006a66);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.ucl-role-card h3 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.ucl-role-organisation,
+.ucl-role-description {
+    margin: 0.35rem 0 0;
+    color: var(--muted, #555b58);
+    line-height: 1.55;
+}
+
+.ucl-role-organisation {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.ucl-role-description {
+    max-width: 760px;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+    .ucl-role-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.15rem 0;
+    }
+
+    .ucl-role-logo {
+        min-height: 0;
+        padding: 0 0 0.9rem;
+        border-right: 0;
+        border-bottom: 1px solid var(--soft-line, #e2e2dd);
+    }
+
+    .ucl-role-logo img {
+        width: 92px;
+        max-height: 42px;
+    }
+
+    .ucl-role-card h3 {
+        font-size: 1.55rem;
+    }
+}

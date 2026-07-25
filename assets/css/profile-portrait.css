@@ -1,0 +1,81 @@
+/*
+ * Shared profile portrait treatment.
+ * Keep page-specific layout outside this file; visual and responsive portrait
+ * changes made here apply everywhere the portrait-stage component is used.
+ */
+
+.portrait-stage {
+    position: relative;
+    width: 100%;
+    height: min(590px, calc(100svh - 235px));
+    min-height: 480px;
+    isolation: isolate;
+}
+
+.portrait-stage::before {
+    content: "";
+    display: none;
+}
+
+.portrait-accent {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 42%;
+    background: var(--teal);
+}
+
+.portrait-ring,
+.portrait-line {
+    display: none;
+}
+
+.portrait-stage img {
+    position: absolute;
+    z-index: 2;
+    inset: 0 10% 0 0;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% center;
+    filter: grayscale(0.88) contrast(1.12) brightness(1.03);
+}
+
+@media (min-width: 901px) and (max-height: 820px) {
+    .portrait-stage {
+        height: calc(100svh - 175px);
+        min-height: 430px;
+    }
+}
+
+@media (max-width: 900px) {
+    .portrait-stage {
+        width: min(100%, 520px);
+        height: 220px;
+        min-height: 0;
+        margin-left: auto;
+    }
+
+    .portrait-stage img {
+        inset: 0 10% 0 0;
+        width: 90%;
+        object-position: 58% 32%;
+    }
+
+    .portrait-accent {
+        width: 30%;
+        height: 42%;
+    }
+}
+
+@media (max-width: 600px) {
+    .portrait-stage {
+        height: 140px;
+    }
+
+    .portrait-stage img {
+        object-position: 58% 29%;
+    }
+}
